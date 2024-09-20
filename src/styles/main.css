@@ -33,3 +33,26 @@ h1,h2,h3,h4,h5,h6 {
 .red {
     background-color: darksalmon;
 }
+
+.container {
+    background-color: #262626;
+    border-radius: .5rem;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+}
+
+.plants {
+    -webkit-box-shadow: 2px 2px 7px 0px #000000; 
+    box-shadow: 2px 2px 7px 0px #000000;
+    border-radius: .25rem;
+    background-color: #F2D272;
+    color: #262626;
+    width: 18%;
+    height: 2.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+
+}
+
