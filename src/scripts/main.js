@@ -6,7 +6,7 @@ import {harvestPlants} from './harvest.js'
 import {catalogue} from './catalogue.js'
 
 //Get HTML elements
-const inventory = document.qurerySelector('.container')
+const inventory = document.querySelector('.container')
 
 //gets the plan for what seeds to plant
 const yearlyPlan = createPlan()
