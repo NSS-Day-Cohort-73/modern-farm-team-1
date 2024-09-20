@@ -38,6 +38,9 @@ h1,h2,h3,h4,h5,h6 {
 .container {
     background-color: #262626;
     border-radius: .5rem;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
 
 }
 
@@ -47,4 +50,9 @@ h1,h2,h3,h4,h5,h6 {
     border-radius: .25rem;
     background-color: #F2D272;
     color: #262626;
+    width: 18%;
+    height: 2.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+
 }
