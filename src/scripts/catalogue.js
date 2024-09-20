@@ -4,4 +4,5 @@ export const catalogue = (harvestedPlants) => {
         const plantHTML = `<section class="plant">${plant.name}</section>`;
         html += plantHTML;
     });
+    return html
 };
