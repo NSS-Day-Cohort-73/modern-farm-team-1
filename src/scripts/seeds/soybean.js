@@ -1,4 +1,4 @@
-export const createSoybean = (type, height, output) => {
+export const createSoybean = () => {
     const soybeanSeed = {
         type: "Soybean",
         height: 20,
