@@ -1,10 +1,12 @@
 export const barn = () => {
-    let crops = []
+     let crops = []
+     
 
     return {
         push: (crop) => crops.push(crop), 
         pop: () => crops.pop(),            
         peek: () => crops[crops.length - 1], 
-        isEmpty: () => crops.length === 0  
+        isEmpty: () => crops.length === 0, 
+        getCrops: () => crops 
     }
 }
