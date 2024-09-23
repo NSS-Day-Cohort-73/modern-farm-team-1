@@ -20,5 +20,9 @@ const harvest = usePlants()
 //stores an array of the output from each seed planted in an array called seedObjects
 const seedObjects = harvestPlants(harvest)
 
+
+const seedObject = plantCount(seedObjects)
+
+
 //Updates the DOM with the catalogue of plants.
-inventory.innerHTML = catalogue(seedObjects)
+inventory.innerHTML = catalogue(seedObject)
