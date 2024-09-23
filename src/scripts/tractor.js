@@ -4,7 +4,7 @@ import {createAsparagus} from "./seeds/asparagus.js"
 import {createWheat} from "./seeds/wheat.js"
 import {createPotato} from "./seeds/potato.js"
 import {createCorn} from "./seeds/corn.js"
-import {addPlant} from "./fields.js"
+import {addPlant} from "./field.js"
 
 export const plantSeeds = (plan) => {
     for (const row of plan) {
@@ -14,7 +14,7 @@ export const plantSeeds = (plan) => {
             } else if (item === "Sunflower") {
                 addPlant(createSunflower())
             } else if (item === "Asparagus") {
-                addPlant(createAsparagus)
+                addPlant(createAsparagus())
             } else if (item === "Wheat") {
                 addPlant(createWheat())
             } else if (item === "Potato") {
