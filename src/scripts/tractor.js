@@ -4,6 +4,7 @@ import {createAsparagus} from "./seeds/asparagus.js"
 import {createWheat} from "./seeds/wheat.js"
 import {createPotato} from "./seeds/potato.js"
 import {createCorn} from "./seeds/corn.js"
+import {addPlant} from "./fields.js"
 
 export const plantSeeds = (plan) => {
     for (const row of plan) {
