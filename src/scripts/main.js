@@ -8,6 +8,7 @@ import { processor } from './processingFacility.js'
 
 
 
+
 //Get HTML elements
 const inventory = document.querySelector('.container')
 
@@ -27,28 +28,48 @@ const seedObjects = harvestPlants(harvest)
 const seedObject = plantCount(seedObjects)
 
 
-const getCrops = myBarn.getCrops()
+const crops = myBarn.getCrops()
+const belt = processor()
+let farmStore = []
 
-console.log(getCrops)
+const processedGoods = {
+    'Soybean': 'Bean paste',
+    'Corn': 'Corn meal',
+    'Sunflower': 'Sunflower Oil',
+    'Asparagus': 'Pickled asparagus',
+    'Wheat': 'Flour',
+    'Potato': 'Potato chips'
+}
 
-myBarn.pop()
+// 3 Crops at a time on the belt
+// Counter for managing the conveyor belt queue
+let currentIndex = 0
 
-myBarn.pop()
+for (let i = 0; i < crops.length; i++) {
+    // Fill the belt with a maximum of 3 items at a time, using a separate index for the belt
+    while (belt.size() < 3 && currentIndex < crops.length) {
+        belt.enqueue(crops[currentIndex])
+        currentIndex++ 
+    }
 
-myBarn.pop()
+    // Process items on the belt
+    while (!belt.isEmpty()) {
+        const crop = belt.dequeue()  
+        if (crop.type in processedGoods) {
+            farmStore.push(processedGoods[crop.type])  
+        }
 
-myBarn.pop()
+        // Make sure there's always at least 1 item on the belt until storage is empty
+        if (currentIndex < crops.length) {
+            belt.enqueue(crops[currentIndex]) 
+            currentIndex++ 
+        }
+    }
+}
 
-console.log(myBarn.peek())
-
-console.log(getCrops)
-
-const process = processor()
-
-process.enqueue(myBarn.pop())
-
-
-console.log(process.getBelt())
+// At the end, log the required messages
+console.log('Storage Barn is ready for new crops')
+console.log('Farm Store inventory is full and ready to open for business')
 
 
 //Updates the DOM with the catalogue of plants.
