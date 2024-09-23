@@ -1,3 +1,7 @@
+import {barn} from "./storageBarn.js"
+
+export const myBarn = barn()
+
 export const harvestPlants = (arr) => {
     arr.sort((a, b) => a.type.localeCompare(b.type))
     let harvestArray = []
@@ -6,11 +10,13 @@ export const harvestPlants = (arr) => {
 
             for (let i=0; i < item.output / 2; i++) {
                 harvestArray.push({...item})
+                myBarn.push(item)
             }
             
         } else {
             for (let x=0; x < item.output; x++) {
                 harvestArray.push({...item})
+                myBarn.push(item)
             }
         }
     }

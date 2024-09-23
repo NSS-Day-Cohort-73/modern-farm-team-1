@@ -2,8 +2,11 @@
 import {createPlan} from './plan.js'
 import {plantSeeds} from './tractor.js'
 import {usePlants} from './field.js'
-import {harvestPlants, plantCount} from './harvester.js'
+import {harvestPlants, plantCount, myBarn} from './harvester.js'
 import {catalogue} from './catalogue.js'
+import { processor } from './processingFacility.js'
+
+
 
 //Get HTML elements
 const inventory = document.querySelector('.container')
@@ -24,5 +27,34 @@ const seedObjects = harvestPlants(harvest)
 const seedObject = plantCount(seedObjects)
 
 
+const getCrops = myBarn.getCrops()
+
+console.log(getCrops)
+
+myBarn.pop()
+
+myBarn.pop()
+
+myBarn.pop()
+
+myBarn.pop()
+
+console.log(myBarn.peek())
+
+console.log(getCrops)
+
+const process = processor()
+
+process.enqueue(myBarn.pop())
+
+
+console.log(process.getBelt())
+
+
 //Updates the DOM with the catalogue of plants.
 inventory.innerHTML = catalogue(seedObject)
+
+
+
+
+

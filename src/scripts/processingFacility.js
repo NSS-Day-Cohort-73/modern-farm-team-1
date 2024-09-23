@@ -6,7 +6,8 @@ return {
     next: () => conveyorBelt[0],
     last: () => conveyorBelt[conveyorBelt.length -1],
     isEmpty: () => conveyorBelt.length === 0, 
-    size: () => conveyorBelt.length
+    size: () => conveyorBelt.length,
+    getBelt: () => conveyorBelt
     
 }
 }
