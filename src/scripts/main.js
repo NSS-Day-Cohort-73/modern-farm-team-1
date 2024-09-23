@@ -2,7 +2,7 @@
 import {createPlan} from './plan.js'
 import {plantSeeds} from './tractor.js'
 import {usePlants} from './field.js'
-import {harvestPlants} from './harvester.js'
+import {harvestPlants, plantCount} from './harvester.js'
 import {catalogue} from './catalogue.js'
 
 //Get HTML elements
