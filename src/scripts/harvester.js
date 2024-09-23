@@ -5,15 +5,26 @@ export const harvestPlants = (arr) => {
         if (item.type === "Corn") {
 
             for (let i=0; i < item.output / 2; i++) {
-                harvestArray.push(item)
+                harvestArray.push({...item})
             }
             
         } else {
             for (let x=0; x < item.output; x++) {
-                harvestArray.push(item)
+                harvestArray.push({...item})
             }
         }
     }
+    let startValue = 1
+
+    for (const items of harvestArray) {
+        if (!items.hasOwnProperty("id")) {
+            items.id = startValue
+        } 
+        startValue++
+        }
+        
+        
+        
 
     
     return harvestArray
